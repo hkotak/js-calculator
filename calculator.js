@@ -5,6 +5,64 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+var calculatorModule = (function() {
+    var memory = 0;
+    var total = 0;
+
+    var calculator = {
+        load: function(num) {
+            if (typeof num === 'number') {
+                return total = num;
+            } else {
+                throw err;
+            }
+        },
+        getTotal: function() {
+            return total;
+        },
+        add: function(addNum) {
+            if(typeof addNum === 'number') {
+                return total += addNum;
+            } else {
+                throw err;
+            }
+        },
+        subtract: function(subNum) {
+            if(typeof subNum === 'number') {
+                return total -= subNum;
+            } else {
+                throw err;
+            }
+        },
+        multiply: function(multiplyNum) {
+            if(typeof multiplyNum === 'number') {
+                return total *= multiplyNum;
+            } else {
+                throw err;
+            }
+        },
+        divide: function(divideNum) {
+            if(typeof divideNum === 'number') {
+                return total /= divideNum;
+            } else {
+                throw err;
+            }
+        },
+        recallMemory: function() {
+            return memory;
+        },
+        saveMemory: function() {
+            return memory = total;
+        },
+        clearMemory: function() {
+            return memory = 0;
+        }
+
+
+        
+    };   
+    return calculator;
+});
 
 
   /**
@@ -13,12 +71,10 @@
    * @return { Number }    current total
    */
 
-
   /**
    * Return the value of `total`
    * @return { Number }
    */
-
 
   /**
    * Sums the value passed in with `total`
